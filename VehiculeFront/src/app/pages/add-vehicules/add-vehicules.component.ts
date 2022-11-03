@@ -21,16 +21,14 @@ export class Vehicule {
 })
 
 export class AddVehiculesComponent implements OnInit {
-  vehicule:Vehicule[];
-  newVehicule:Vehicule=new Vehicule();
+  vehicule: Vehicule[];
+  newVehicule: Vehicule = new Vehicule();
   buttonOptions: any = {
-    text: "Register",
-    type: "success",
+    text: 'Register',
+    type: 'success',
     useSubmitBehavior: true
 }
-  //vehicule={name:'',marque:'',type:'',couleur:'',nombreDePortes:'',boite:'',cylindree:'',carburant:''};
-  constructor(private service:VehiculesService,private router:Router) { }
- marques : string[] = [
+ marques: string[] = [
     // "CHERRY",
     // "MAHINDRA",
     // "FIAT",
@@ -38,81 +36,91 @@ export class AddVehiculesComponent implements OnInit {
     // "MERCEDES BENZ",
     // "LAND ROVER"
 ];
-types : string[] = [
-  //"Pick-up","SUV","Berline","Citadine","Coupée"
+types: string[] = [
+  // "Pick-up","SUV","Berline","Citadine","Coupée"
 ];
-boites : string[] = [
-  //"Auto","Semi-auto","Manuelle"
+boites: string[] = [
+  // "Auto","Semi-auto","Manuelle"
 ];
-cylindrees : string[] = [
-  "4","6","8","12"
+cylindrees: string[] = [
+  '4', '6', '8', '12'
 ];
-carburants : string[] = [
+carburants: string[] = [
   // "Essence",
   // "Diesel",
   // "Electrique",
   // "Hybride"
 ];
+  // vehicule={name:'',marque:'',type:'',couleur:'',nombreDePortes:'',boite:'',cylindree:'',carburant:''};
+  constructor(private service: VehiculesService, private router: Router) { }
   ngOnInit(): void {
     this.service.getMarques().subscribe(
       res => {
-        res.forEach(e=>{
+        res.forEach(e => {
           this.marques.push(e.property)
         })
       }
     );
     this.service.getSubClasses('Boite').subscribe(
       res => {
-        res.forEach(e=>{
+        res.forEach(e => {
           this.boites.push(e.name)
         })
-      } 
+      }
     );
     this.service.getSubClasses('Carburant').subscribe(
       res => {
-        res.forEach(e=>{
+        res.forEach(e => {
           this.carburants.push(e.name)
         })
-      } 
+      }
     );
     this.service.getSubClasses('Voiture').subscribe(
       res => {
-        res.forEach(e=>{
+        res.forEach(e => {
           this.types.push(e.name)
         })
-      } 
+      }
     );
-  
+
   }
   form_fieldDataChanged (e) {
-    let updatedField = e.dataField;
-    let newValue = e.value;
-    if(updatedField === 'Name') this.newVehicule.Name =newValue
-    if(updatedField === 'couleur') this.newVehicule.couleur =newValue
-    if(updatedField === 'boite') this.newVehicule.boite =newValue
-    if(updatedField === 'carburant') this.newVehicule.carburant =newValue
-    if(updatedField === 'cylindree') this.newVehicule.cylindree =newValue
-    if(updatedField === 'marque') this.newVehicule.marque =newValue
-    if(updatedField === 'nombreDePortes') this.newVehicule.nombreDePortes =newValue
-    if(updatedField === 'type') this.newVehicule.type =newValue
+    const updatedField = e.dataField;
+    const newValue = e.value;
+    if (updatedField === 'Name') { this.newVehicule.Name = newValue }
+    if (updatedField === 'couleur') { this.newVehicule.couleur = newValue }
+    if (updatedField === 'boite') { this.newVehicule.boite = newValue }
+    if (updatedField === 'carburant') { this.newVehicule.carburant = newValue }
+    if (updatedField === 'cylindree') { this.newVehicule.cylindree = newValue }
+    if (updatedField === 'marque') { this.newVehicule.marque = newValue }
+    if (updatedField === 'nombreDePortes') { this.newVehicule.nombreDePortes = newValue }
+    if (updatedField === 'type') { this.newVehicule.type = newValue }
 
     console.log(this.newVehicule)
     // Event handling commands go here
 }
 
-  Submit(e){
-    this.service.addVehicule(this.newVehicule.Name,this.newVehicule.couleur,this.newVehicule.nombreDePortes,this.newVehicule.marque,this.newVehicule.cylindree,this.newVehicule.boite,this.newVehicule.carburant,this.newVehicule.type)
-    .subscribe(data=>{
+  Submit(e) {
+    this.service.addVehicule(
+      this.newVehicule.Name,
+      this.newVehicule.couleur,
+      this.newVehicule.nombreDePortes,
+      this.newVehicule.marque,
+      this.newVehicule.cylindree,
+      this.newVehicule.boite,
+      this.newVehicule.carburant,
+      this.newVehicule.type)
+    .subscribe(data => {
       notify({
-        message: "You have submitted the form",
+        message: 'You have submitted the form',
         position: {
-            my: "center top",
-            at: "center top"
+            my: 'center top',
+            at: 'center top'
         }
-    }, "success", 3000);
+    }, 'success', 3000);
     this.router.navigate(['/display'])
     })
-    
+
 
   console.log(this.vehicule)
   e.preventDefault();

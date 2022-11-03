@@ -25,7 +25,7 @@
         <input type="text" name="carburant" [(ngModel)]="vehicule.carburant" #carburant="ngModel" placeholder="carburant">
     </div>
     <button type="submit">Ajouter</button>
-    
+
 </form>
 </div> -->
 
@@ -38,12 +38,12 @@
         [showColonAfterLabel]="true"
         [showValidationSummary]="true"
         (onFieldDataChanged)="form_fieldDataChanged($event)">
-        <dxi-item itemType="group" caption="Information">
+        <dxi-item itemType="group" caption="Informations">
             <dxi-item dataField="Name">
                 <dxo-label
                 text="Nom">
             </dxo-label>
-                <dxi-validation-rule 
+                <dxi-validation-rule
                     type="required"
                     message="Name is required">
                 </dxi-validation-rule>
@@ -52,50 +52,50 @@
                 <dxo-label
                 text="Couleur">
             </dxo-label>
-                <dxi-validation-rule 
+                <dxi-validation-rule
                     type="required"
                     message="Couleur is required">
                 </dxi-validation-rule>
             </dxi-item>
             <dxi-item dataField="nombreDePortes" editorType="dxNumberBox">
-                
+
                 <dxo-label
                 text="Nombre de portes">
             </dxo-label>
-                <dxi-validation-rule 
+                <dxi-validation-rule
                     type="required"
                     message="Nombre De Portes is required">
                 </dxi-validation-rule>
             </dxi-item>
         </dxi-item>
-        <dxi-item itemType="group" caption="other Information">
+        <dxi-item itemType="group" caption="Autres Informations">
             <dxi-item dataField="type" editorType="dxSelectBox" [editorOptions]="{ items: types, searchEnabled: true, value: '' }">
                 <dxo-label
                 text="Type de voiture">
             </dxo-label>
-            <dxi-validation-rule 
+            <dxi-validation-rule
                     type="required"
                     message="Type is required">
                 </dxi-validation-rule>
-            </dxi-item>            
+            </dxi-item>
             <dxi-item dataField="marque" editorType="dxSelectBox" [editorOptions]="{ items: marques, searchEnabled: true, value: '' }">
                 <dxo-label
                 text="Marque">
             </dxo-label>
-            <dxi-validation-rule 
+            <dxi-validation-rule
                     type="required"
                     message="Marque is required">
                 </dxi-validation-rule>
                 <!-- k <dxi-validation-rule type="required" message="Position is required"></dxi-validation-rule> -->
              </dxi-item>
         </dxi-item>
-        
+
         <dxi-item itemType="group" caption="Moteur">
             <dxi-item dataField="boite" editorType="dxSelectBox" [editorOptions]="{ items: boites, searchEnabled: true, value: '' }">
                 <dxo-label
                 text="Type de boite">
             </dxo-label>
-            <dxi-validation-rule 
+            <dxi-validation-rule
                     type="required"
                     message="Boite is required">
                 </dxi-validation-rule>
@@ -104,7 +104,7 @@
                 <dxo-label
                 text="Nombre de cylindres">
             </dxo-label>
-            <dxi-validation-rule 
+            <dxi-validation-rule
                     type="required"
                     message="Cylindree is required">
                 </dxi-validation-rule>
@@ -113,13 +113,13 @@
                 <dxo-label
                 text="Type de carburant">
             </dxo-label>
-            <dxi-validation-rule 
+            <dxi-validation-rule
                     type="required"
                     message="Type de carburant is required">
                 </dxi-validation-rule>
             </dxi-item>
         </dxi-item>
-        <dxi-item 
+        <dxi-item
         itemType="button"
         horizontalAlignment="left"
         [buttonOptions]="buttonOptions">

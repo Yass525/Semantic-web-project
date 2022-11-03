@@ -1,19 +1,17 @@
 
-<div class="sidebar-wrapper">
+<div class="sidebar-wrapper" style="background-color:#122567;
+">
   <div class="logo">
-    <a href="http://www.creative-tim.com" class="simple-text logo-mini">
-      <div class="logo-image-small">
-        <!-- <img src="assets/img/angular2-logo.png"> -->
+    <a href="#" class="simple-text">
+      <div style="width: 100%; height: auto">
+         <img src="./assets/img/logo.png" >
       </div>
-    </a>
-    <a href="https://www.creative-tim.com" class="simple-text logo-normal">
-      TWIN CAR
     </a>
   </div>
     <ul class="nav">
         <li *ngFor="let menuItem of menuItems" routerLinkActive="active" class="{{menuItem.class}}">
-            <a [routerLink]="[menuItem.path]">
-                <i class="nc-icon {{menuItem.icon}}"></i>
+            <a [routerLink]="[menuItem.path]" style="color: white">
+                <i class="nc-icon {{menuItem.icon}}" style="color: white"></i>
                 <p>{{menuItem.title}}</p>
             </a>
         </li>

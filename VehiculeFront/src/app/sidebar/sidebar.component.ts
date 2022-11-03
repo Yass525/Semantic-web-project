@@ -16,15 +16,15 @@ export const ROUTES: RouteInfo[] = [
     // { path: '/user',          title: 'User Profile',      icon:'nc-single-02',  class: '' },
     // { path: '/table',         title: 'Table List',        icon:'nc-tile-56',    class: '' },
     // { path: '/typography',    title: 'Typography',        icon:'nc-caps-small', class: '' },
-    { path: '/display',       title: 'Display vehicules',    icon:'nc-bullet-list-67',  class: '' },
-    { path: '/add',       title: 'New vehicule',    icon:'nc-simple-add',  class: '' },
+    { path: '/display',       title: 'Display vehicules',    icon: 'nc-bullet-list-67',  class: '' },
+    { path: '/add',       title: 'New vehicule',    icon: 'nc-simple-add',  class: '' },
     // { path: '/upgrade',       title: 'Upgrade to PRO',    icon:'nc-spaceship',  class: 'active-pro' },
-   
+
 ];
 
 @Component({
     moduleId: module.id,
-    selector: 'sidebar-cmp',
+    selector: 'app-sidebar',
     templateUrl: 'sidebar.component.html',
 })
 

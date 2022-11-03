@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
 
 @Component({
-    selector: 'icons-cmp',
+    selector: 'app-icons',
     moduleId: module.id,
     templateUrl: 'icons.component.html'
 })
 
-export class IconsComponent{}
+export class IconsComponent {}
