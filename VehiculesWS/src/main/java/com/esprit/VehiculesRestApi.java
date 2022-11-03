@@ -111,7 +111,7 @@ public class VehiculesRestApi {
         List<JSONObject> list=new ArrayList();
         try {
             this.model = this.readModel();
-            String classURI = "http://www.semanticweb.org/high5/ontologies/2020/10/vehicules#".concat(className);
+            String classURI = "http://www.semanticweb.org/high5/ontologies/2022/10/vehicules#".concat(className);
             System.out.println(classURI);
             OntClass personne = this.model.getOntClass(classURI );
             Iterator subIter = personne.listSubClasses();
@@ -165,7 +165,7 @@ public class VehiculesRestApi {
         try {
             this.model = this.readModel();
 
-            String classURI = "http://www.semanticweb.org/high5/ontologies/2020/10/vehicules#".concat(className);
+            String classURI = "http://www.semanticweb.org/high5/ontologies/2022/10/vehicules#".concat(className);
             System.out.println(classURI);
             OntClass personne = this.model.getOntClass(classURI );
             Iterator subIter = personne.listSuperClasses();
@@ -173,6 +173,7 @@ public class VehiculesRestApi {
                 OntClass sub = (OntClass) subIter.next();
                 JSONObject obj = new JSONObject();
                 obj.put("URI",sub.getURI());
+                obj.put("name",sub.getLocalName());
                 list.add(obj);
 
 
@@ -193,7 +194,7 @@ public class VehiculesRestApi {
         try {
             this.model = this.readModel();
 
-            String classURI = "http://www.semanticweb.org/high5/ontologies/2020/10/vehicules#".concat(className);
+            String classURI = "http://www.semanticweb.org/high5/ontologies/2022/10/vehicules#".concat(className);
 
             OntClass ontClass = this.model.getOntClass(classURI );
             Iterator subIter = ontClass.listDeclaredProperties();
@@ -229,7 +230,7 @@ public class VehiculesRestApi {
         try {
             this.model = this.readModel();
 
-            String classURI = "http://www.semanticweb.org/high5/ontologies/2020/10/vehicules#".concat(className);
+            String classURI = "http://www.semanticweb.org/high5/ontologies/2022/10/vehicules#".concat(className);
             System.out.println(classURI);
             OntClass personne = this.model.getOntClass(classURI );
             Iterator subIter = personne.listEquivalentClasses();
@@ -257,7 +258,7 @@ public class VehiculesRestApi {
         try {
             this.model = this.readModel();
 
-            String classURI = "http://www.semanticweb.org/high5/ontologies/2020/10/vehicules#".concat(className);
+            String classURI = "http://www.semanticweb.org/high5/ontologies/2022/10/vehicules#".concat(className);
             System.out.println(classURI);
             OntClass personne = this.model.getOntClass(classURI );
             Iterator subIter = personne.listInstances();
@@ -319,7 +320,7 @@ public class VehiculesRestApi {
             OntModel model = ModelFactory
                     .createOntologyModel(OntModelSpec.OWL_DL_MEM);
             model.read(reader,null);
-            String classURI = "http://www.semanticweb.org/high5/ontologies/2020/10/vehicules#".concat(className);
+            String classURI = "http://www.semanticweb.org/high5/ontologies/2022/10/vehicules#".concat(className);
             System.out.println(classURI);
             OntClass personne = model.getOntClass(classURI );
 
@@ -356,7 +357,7 @@ public class VehiculesRestApi {
 
             String querygetPays =
    	    	     "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> " +        
-   	    	     "PREFIX vec: <http://www.semanticweb.org/high5/ontologies/2020/10/vehicules#>  " +
+   	    	     "PREFIX vec: <http://www.semanticweb.org/high5/ontologies/2022/10/vehicules#>  " +
    	    	     "PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> " +
 
    	    	     " SELECT ?MoyenneGamme ?nom " +
@@ -398,7 +399,7 @@ public class VehiculesRestApi {
             model.read(reader,null);
             String querygetPays =
    	    	     "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> " +        
-   	    	     "PREFIX vec: <http://www.semanticweb.org/high5/ontologies/2020/10/vehicules#>  " +
+   	    	     "PREFIX vec: <http://www.semanticweb.org/high5/ontologies/2022/10/vehicules#>  " +
    	    	     "PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> " +
 
    	    	     " SELECT ?MoyenneGamme ?nom " +
@@ -444,7 +445,7 @@ public class VehiculesRestApi {
             model.read(reader,null);
             String querygetPays =
    	    	     "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> " +        
-   	    	     "PREFIX vec: <http://www.semanticweb.org/high5/ontologies/2020/10/vehicules#>  " +
+   	    	     "PREFIX vec: <http://www.semanticweb.org/high5/ontologies/2022/10/vehicules#>  " +
    	    	     "PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> " +
 
    	    	     " SELECT ?HauteGamme ?nom " +
@@ -489,7 +490,7 @@ public class VehiculesRestApi {
             model.read(reader,null);
             String querygetPays =
    	    	     "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> " +        
-   	    	     "PREFIX vec: <http://www.semanticweb.org/high5/ontologies/2020/10/vehicules#>  " +
+   	    	     "PREFIX vec: <http://www.semanticweb.org/high5/ontologies/2022/10/vehicules#>  " +
    	    	     "PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> " +
 
    	    	     " SELECT DISTINCT ?Marque  " +
@@ -533,7 +534,7 @@ public class VehiculesRestApi {
             model.read(reader,null);
             String querygetPays =
    	    	     "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> " +        
-   	    	     "PREFIX vec: <http://www.semanticweb.org/high5/ontologies/2020/10/vehicules#>  " +
+   	    	     "PREFIX vec: <http://www.semanticweb.org/high5/ontologies/2022/10/vehicules#>  " +
    	    	     "PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> " +
 
 				" SELECT DISTINCT ?Carburant  " +
@@ -574,7 +575,7 @@ public class VehiculesRestApi {
             model.read(reader,null);
             String querygetPays =
    	    	     "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> " +        
-   	    	     "PREFIX vec: <http://www.semanticweb.org/high5/ontologies/2020/10/vehicules#>  " +
+   	    	     "PREFIX vec: <http://www.semanticweb.org/high5/ontologies/2022/10/vehicules#>  " +
    	    	     "PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> " +
 
  				" SELECT ?Cylindree" +
@@ -617,7 +618,7 @@ public class VehiculesRestApi {
             model.read(reader,null);
             String querygetPays =
             		 "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> " +        
-            	    	     "PREFIX vec: <http://www.semanticweb.org/high5/ontologies/2020/10/vehicules#>  " +
+            	    	     "PREFIX vec: <http://www.semanticweb.org/high5/ontologies/2022/10/vehicules#>  " +
             	    	     "PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> " +
 
   					" SELECT ?voiture  " +
@@ -658,7 +659,7 @@ public class VehiculesRestApi {
             model.read(reader,null);
             String querygetPays =
             		 "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> " +        
-            	    	     "PREFIX vec: <http://www.semanticweb.org/high5/ontologies/2020/10/vehicules#>  " +
+            	    	     "PREFIX vec: <http://www.semanticweb.org/high5/ontologies/2022/10/vehicules#>  " +
             	    	     "PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> " +
 
   					" SELECT ?voiture  " +
@@ -698,7 +699,7 @@ public class VehiculesRestApi {
             model.read(reader,null);
             String querygetPays =
             		 "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> " +        
-            	    	     "PREFIX vec: <http://www.semanticweb.org/high5/ontologies/2020/10/vehicules#>  " +
+            	    	     "PREFIX vec: <http://www.semanticweb.org/high5/ontologies/2022/10/vehicules#>  " +
             	    	     "PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> " +
             	    	     " SELECT   DISTINCT  ?consomme " +
     		   	    	     " WHERE { ?voiture vec:consomme  ?consomme} " ;
@@ -734,7 +735,7 @@ public class VehiculesRestApi {
 
             String querygetPays =
    	    	     "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> " +        
-   	    	     "PREFIX vec: <http://www.semanticweb.org/high5/ontologies/2020/10/vehicules#>  " +
+   	    	     "PREFIX vec: <http://www.semanticweb.org/high5/ontologies/2022/10/vehicules#>  " +
    	    	     "PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> " +
 
    	    	     " SELECT ?voiture  ?consomme ?fabriquant ?couleur ?nbporte" +
@@ -775,7 +776,7 @@ public class VehiculesRestApi {
     public List<JSONObject> AddInstance(@RequestParam("name") String name,@RequestParam("couleur") String couleur,@RequestParam("nbPorte") int nbPorte ,
     		@RequestParam("marque") String marque,@RequestParam("cylindree") String cylindree,@RequestParam("boite") String boite,@RequestParam("type") String type,@RequestParam("consomme") String consomme) {
     	
-		 String NS= "http://www.semanticweb.org/high5/ontologies/2020/10/vehicules#";
+		 String NS= "http://www.semanticweb.org/high5/ontologies/2022/10/vehicules#";
         List<JSONObject> list=new ArrayList();
         try {
             this.model = this.readModel();
@@ -806,14 +807,14 @@ public class VehiculesRestApi {
          ind.addProperty( couleurP, this.model.createLiteral( couleur ) )
              .addProperty( nbPorteP, this.model.createTypedLiteral( nbPorte) );
          
-         String output = "<!-- http://www.semanticweb.org/high5/ontologies/2020/10/vehicules#clio -->\r\n"
+         String output = "<!-- http://www.semanticweb.org/high5/ontologies/2022/10/vehicules#clio -->\r\n"
          		+ "\r\n"
-         		+ "    <owl:NamedIndividual rdf:about=\"http://www.semanticweb.org/high5/ontologies/2020/10/vehicules#"+name+"\">\r\n"
-         		+ "        <rdf:type rdf:resource=\"http://www.semanticweb.org/high5/ontologies/2020/10/vehicules#"+type+"\"/>\r\n"
-         		+ "        <vehicules:consomme rdf:resource=\"http://www.semanticweb.org/high5/ontologies/2020/10/vehicules#"+consomme+"\"/>\r\n"
-         		+ "        <vehicules:est_compose_de rdf:resource=\"http://www.semanticweb.org/high5/ontologies/2020/10/vehicules#"+boite+"\"/>\r\n"
-         		+ "        <vehicules:est_compose_de rdf:resource=\"http://www.semanticweb.org/high5/ontologies/2020/10/vehicules#"+cylindree+"\"/>\r\n"
-         		+ "        <vehicules:est_fabrique_par rdf:resource=\"http://www.semanticweb.org/high5/ontologies/2020/10/vehicules#"+marque.toUpperCase()+"\"/>\r\n"
+         		+ "    <owl:NamedIndividual rdf:about=\"http://www.semanticweb.org/high5/ontologies/2022/10/vehicules#"+name+"\">\r\n"
+         		+ "        <rdf:type rdf:resource=\"http://www.semanticweb.org/high5/ontologies/2022/10/vehicules#"+type+"\"/>\r\n"
+         		+ "        <vehicules:consomme rdf:resource=\"http://www.semanticweb.org/high5/ontologies/2022/10/vehicules#"+consomme+"\"/>\r\n"
+         		+ "        <vehicules:est_compose_de rdf:resource=\"http://www.semanticweb.org/high5/ontologies/2022/10/vehicules#"+boite+"\"/>\r\n"
+         		+ "        <vehicules:est_compose_de rdf:resource=\"http://www.semanticweb.org/high5/ontologies/2022/10/vehicules#"+cylindree+"\"/>\r\n"
+         		+ "        <vehicules:est_fabrique_par rdf:resource=\"http://www.semanticweb.org/high5/ontologies/2022/10/vehicules#"+marque.toUpperCase()+"\"/>\r\n"
          		+ "        <vehicules:couleur>"+couleur+"</vehicules:couleur>\r\n"
          		+ "        <vehicules:nombreDePortes rdf:datatype=\"http://www.w3.org/2001/XMLSchema#integer\">"+nbPorte+"</vehicules:nombreDePortes>\r\n"
          		+ "    </owl:NamedIndividual>\r\n"
